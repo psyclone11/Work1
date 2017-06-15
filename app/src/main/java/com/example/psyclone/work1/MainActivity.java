@@ -9,8 +9,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import static com.example.psyclone.work1.R.id.faculty;
+import static com.example.psyclone.work1.R.id.tell;
+
 public class MainActivity extends AppCompatActivity {
     String yourname;
+    String faculty;
+    String tell;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt("idName",12);
         editor.commit();
 
-        button.setOnClickListener(
+        /*button.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View v) {
                         EditText  editTextName = (EditText) findViewById(R.id.yourname);
@@ -38,15 +44,26 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 }
-        );
+        );*/
     }
 
     public void click (View view){
         EditText editTextName = (EditText) findViewById(R.id.yourname);
-        String yourName = editTextName.getText().toString();
+        EditText editTextName1 = (EditText) findViewById(R.id.faculty);
+        EditText editTextName2 = (EditText) findViewById(R.id.tell);
+
+
+        String yourname = editTextName.getText().toString();
+        String faculty = editTextName1.getText().toString();
+        String tell = editTextName2.getText().toString();
+
         Intent intent = new Intent(this, Main2Activity.class);
         intent.putExtra("yourname",yourname);
-        intent.putExtra("tel","0630847155");
+        intent.putExtra("faculty",faculty);
+        intent.putExtra("tell",tell);
+
         startActivity(intent);
+
+
     }
 }

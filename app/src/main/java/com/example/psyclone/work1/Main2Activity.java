@@ -14,12 +14,20 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("payu", Context.MODE_PRIVATE);
-        String yourname = sharedPreferences.getString("name","");
+        //SharedPreferences sharedPreferences = getSharedPreferences("payu", Context.MODE_PRIVATE);
+       // String yourname = sharedPreferences.getString("name","");
 
         Intent intent = getIntent();
-        String name = intent.getStringExtra("yourName");
-        TextView textName = (TextView) findViewById(R.id.textView3);
+        String name = intent.getStringExtra("yourname");
+        TextView textName = (TextView) findViewById(R.id.textView8);
         textName.setText(name);
+
+        String faculty = intent.getStringExtra("faculty");
+        TextView textfaculty = (TextView) findViewById(R.id.textView12);
+        textfaculty.setText(faculty);
+
+        String tell = intent.getStringExtra("tell");
+        TextView texttell = (TextView) findViewById(R.id.textView13);
+        texttell.setText(tell);
     }
 }
