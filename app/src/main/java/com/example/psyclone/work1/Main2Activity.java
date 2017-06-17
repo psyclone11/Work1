@@ -29,5 +29,9 @@ public class Main2Activity extends AppCompatActivity {
         String tell = intent.getStringExtra("tell");
         TextView texttell = (TextView) findViewById(R.id.textView13);
         texttell.setText(tell);
+
+        String spinner = intent.getStringExtra("spinner");
+        TextView textspinner = (TextView) findViewById(R.id.textView14);
+        textspinner.setText(spinner);
     }
 }
